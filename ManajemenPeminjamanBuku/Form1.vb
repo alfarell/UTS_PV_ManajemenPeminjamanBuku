@@ -30,7 +30,7 @@
     End Sub
 
     Private Sub btnBuatPeminjaman_Click(sender As Object, e As EventArgs) Handles btnBuatPeminjaman.Click
-        peminjamanManager.BuatPeminjaman(txtNama, txtISBN, numDurasi, txtHarga, txtNoMember, dgvPeminjaman)
+        peminjamanManager.BuatPeminjaman(txtJudul, txtISBN, numDurasi, txtHarga, txtNoMember, txtNama, txtAlamat, dgvPeminjaman)
     End Sub
 
     Private Sub btnBuatMember_Click(sender As Object, e As EventArgs) Handles btnBuatMember.Click
@@ -50,11 +50,14 @@
     End Sub
 
     Private Sub btnResetMemberId_Click(sender As Object, e As EventArgs) Handles btnResetMemberId.Click
-        memberManager.ResetFormMember(txtNama, txtAlamat)
+        txtNoMember.Clear()
+        txtNama.Clear()
+        txtAlamat.Clear()
     End Sub
 
     Private Sub btnImportDataPeminjam_Click(sender As Object, e As EventArgs) Handles btnImportDataPeminjam.Click
         Dim member As Member = memberManager.LoadMemberFile()
+        txtNoMember.Text = member.Id
         memberManager.FindAndFillMemberFields(member.Id, txtNama, txtAlamat)
     End Sub
 

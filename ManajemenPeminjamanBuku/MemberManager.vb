@@ -53,9 +53,9 @@
         Else
             MessageBox.Show(
                 "Member dengan ID tersebut tidak ditemukan!",
-                "Info",
+                "Error",
                 MessageBoxButtons.OK,
-                MessageBoxIcon.Information
+                MessageBoxIcon.Error
             )
             txtNama.Clear()
             txtAlamat.Clear()

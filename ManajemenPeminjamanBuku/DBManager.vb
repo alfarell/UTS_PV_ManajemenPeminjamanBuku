@@ -31,7 +31,9 @@ Public Class DBManager
             )
             createMember.ExecuteNonQuery()
         Catch ex As Exception
-            MessageBox.Show("create table error: " & ex.Message)
+            MessageBox.Show("create table error: " & ex.Message, "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error)
         Finally
             conn.Close()
         End Try
@@ -72,7 +74,9 @@ Public Class DBManager
             MessageBox.Show("Data peminjaman berhasil ditambahkan!")
             Return True
         Catch ex As Exception
-            MessageBox.Show("Insert peminjaman error: " & ex.Message)
+            MessageBox.Show("Insert peminjaman error: " & ex.Message, "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error)
             Return False
         Finally
             conn.Close()
@@ -96,7 +100,9 @@ Public Class DBManager
             MessageBox.Show("Data peminjaman berhasil ditambahkan!")
             Return True
         Catch ex As Exception
-            MessageBox.Show("Insert member error: " & ex.Message)
+            MessageBox.Show("Insert member error: " & ex.Message, "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error)
             Return False
         Finally
             conn.Close()
@@ -129,7 +135,9 @@ Public Class DBManager
                 adapter.Fill(dt)
             End Using
         Catch ex As Exception
-            MessageBox.Show("Get Peminjaman Error: " & ex.Message)
+            MessageBox.Show("Get Peminjaman Error: " & ex.Message, "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error)
         Finally
             conn.Close()
         End Try
@@ -149,7 +157,9 @@ Public Class DBManager
                 adapter.Fill(dt)
             End Using
         Catch ex As Exception
-            MessageBox.Show("Get Member Error: " & ex.Message)
+            MessageBox.Show("Get Member Error: " & ex.Message, "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error)
         Finally
             conn.Close()
         End Try
@@ -171,7 +181,9 @@ Public Class DBManager
                 adapter.Fill(dt)
             End Using
         Catch ex As Exception
-            MessageBox.Show("Get Member by ID Error: " & ex.Message)
+            MessageBox.Show("Get Member by ID Error: " & ex.Message, "Error",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error)
         Finally
             conn.Close()
         End Try

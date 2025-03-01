@@ -10,9 +10,9 @@
         dgvPeminjaman.DataSource = dtPeminjaman
     End Sub
 
-    Public Sub BuatPeminjaman(txtNama As TextBox, txtISBN As TextBox, numDurasi As NumericUpDown, txtHarga As TextBox, txtNoMember As TextBox, dgvPeminjaman As DataGridView)
+    Public Sub BuatPeminjaman(txtJudul As TextBox, txtISBN As TextBox, numDurasi As NumericUpDown, txtHarga As TextBox, txtNoMember As TextBox, txtNama As TextBox, txtAlamat As TextBox, dgvPeminjaman As DataGridView)
         Dim peminjaman As New Peminjaman
-        peminjaman.Judul = txtNama.Text
+        peminjaman.Judul = txtJudul.Text
         peminjaman.ISBN = txtISBN.Text
         peminjaman.Durasi = numDurasi.Value
         peminjaman.Harga = txtHarga.Text
@@ -37,16 +37,18 @@
         Dim res = dbManager.InsertPeminjaman(peminjaman)
 
         If True = res Then
-            ResetFormPeminjaman(txtNama, txtISBN, numDurasi, txtHarga, txtNoMember)
+            ResetFormPeminjaman(txtJudul, txtISBN, numDurasi, txtHarga, txtNoMember, txtNama, txtAlamat)
             LoadPeminjamanToDataGridView(dgvPeminjaman)
         End If
     End Sub
 
-    Private Sub ResetFormPeminjaman(txtNama As TextBox, txtISBN As TextBox, numDurasi As NumericUpDown, txtHarga As TextBox, txtNoMember As TextBox)
-        txtNama.Clear()
+    Private Sub ResetFormPeminjaman(txtJudul As TextBox, txtISBN As TextBox, numDurasi As NumericUpDown, txtHarga As TextBox, txtNoMember As TextBox, txtNama As TextBox, txtAlamat As TextBox)
+        txtJudul.Clear()
         txtISBN.Clear()
         numDurasi.Value = numDurasi.Minimum
         txtHarga.Clear()
         txtNoMember.Clear()
+        txtNama.Clear()
+        txtAlamat.Clear()
     End Sub
 End Class
