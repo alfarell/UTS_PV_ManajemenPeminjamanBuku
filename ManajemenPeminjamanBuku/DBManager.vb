@@ -97,7 +97,7 @@ Public Class DBManager
                 cmd.ExecuteNonQuery()
             End Using
 
-            MessageBox.Show("Data peminjaman berhasil ditambahkan!")
+            MessageBox.Show("Data member berhasil ditambahkan!")
             Return True
         Catch ex As Exception
             MessageBox.Show("Insert member error: " & ex.Message, "Error",
