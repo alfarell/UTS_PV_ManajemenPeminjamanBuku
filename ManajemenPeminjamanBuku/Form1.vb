@@ -1,6 +1,4 @@
-﻿Imports System.Data.SQLite
-
-Public Class Form1
+﻿Public Class Form1
     Private dbManager As New DBManager()
     Private peminjamanManager As New PeminjamanManager(dbManager)
     Private memberManager As New MemberManager(dbManager)
