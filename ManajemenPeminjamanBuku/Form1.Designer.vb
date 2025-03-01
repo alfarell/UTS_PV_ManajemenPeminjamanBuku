@@ -521,7 +521,7 @@ Partial Class Form1
         ClientSize = New Size(800, 450)
         Controls.Add(TabControl1)
         Name = "Form1"
-        Text = "Form1"
+        Text = "Manajemen Peminjaman Buku"
         TabControl1.ResumeLayout(False)
         buatPeminjaman.ResumeLayout(False)
         buatPeminjaman.PerformLayout()
